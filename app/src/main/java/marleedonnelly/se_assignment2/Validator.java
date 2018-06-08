@@ -10,19 +10,9 @@ public class Validator {
     private char[] specialCharacters = {'!','@','#','$','%','^','&','*','(',')','-','_','+','='};
     private  char[] numbers = {'1','2','3','4','5','6','7','8','9','0'};
 
-    public static void main(String [] args){
-        Validator validator = new Validator();
-
-        String [] passwords = {"Acc3ptable!!", "$hOrt", "ALL_UPPERCASE1", "NoNumber", "password", "aaa"};
-        for(int m=0; m<passwords.length; m++) {
-            System.out.println("Validating "+passwords[m]);
-            validator.validate(passwords[m]);
-        }
-    }
 
     public int validate(String passwordStr) {
         int rulesPassed = NUM_RULES;
-        System.out.println("Num rules (total): "+NUM_RULES);
 
         //Check that the password is long enough
         if(passwordStr.length() < MIN_LENGTH){
@@ -65,7 +55,6 @@ public class Validator {
             rulesPassed--;
         }
 
-        System.out.println("Num rules passed: "+rulesPassed);
         return rulesPassed;
     }
 }
