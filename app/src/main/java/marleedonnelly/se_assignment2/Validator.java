@@ -57,4 +57,9 @@ public class Validator {
 
         return rulesPassed;
     }
+
+    public int getNumRules() {
+        return NUM_RULES;
+    }
+
 }
