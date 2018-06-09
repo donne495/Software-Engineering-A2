@@ -41,3 +41,5 @@
 .DS_Store
 .idea/sonarlint/issuestore/7/b/7b5dfc679f97f3f1b2c7d1b13d1cffbe0492e936
 .idea/sonarlint/issuestore/index.pb
+.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_0_jar.xml
+.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_0.xml
