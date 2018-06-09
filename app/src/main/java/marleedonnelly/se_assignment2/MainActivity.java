@@ -19,15 +19,15 @@ public class MainActivity extends AppCompatActivity {
         Button validate = findViewById(R.id.validate);
         final TextView resultText = findViewById(R.id.resultText);
 
+        //Validate user input when validate button clicked
         validate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String password = passwordField.getText().toString();
-                //Validate password
+                String userInput = passwordField.getText().toString();
                 Validator validator = new Validator();
 
-                int result = validator.validate(password);
-                if(result == validator.getNumRules()){
+                int rulesPassed = validator.validate(userInput);
+                if(rulesPassed == validator.getNumRules()){
                     resultText.setText("Password is strong enough.");
                 }
                 else{

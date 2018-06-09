@@ -8,27 +8,27 @@ public class Validator {
     private static  final int NUM_RULES = 5;
 
     private char[] specialCharacters = {'!','@','#','$','%','^','&','*','(',')','-','_','+','='};
-    private  char[] numbers = {'1','2','3','4','5','6','7','8','9','0'};
+    private char[] numbers = {'1','2','3','4','5','6','7','8','9','0'};
+    private boolean hasSpecialChar = false;
+    private boolean hasNumber = false;
 
-
-    public int validate(String passwordStr) {
+    public int validate(String passwordString) {
         int rulesPassed = NUM_RULES;
 
         //Check that the password is long enough
-        if(passwordStr.length() < MIN_LENGTH){
+        if(passwordString.length() < MIN_LENGTH){
             rulesPassed--;
         }
 
         //Check that the password is not "password"
-        if(passwordStr.equalsIgnoreCase(WRONG_STR)){
+        if(passwordString.equalsIgnoreCase(WRONG_STR)){
             rulesPassed--;
         }
 
         //Check that the password contains at least one special character
-        boolean hasSpecialChar = false;
         for(int i=0; i<specialCharacters.length; i++){
             String currentSpecialCharacter = specialCharacters[i]+"";
-            if(passwordStr.contains(currentSpecialCharacter)){
+            if(passwordString.contains(currentSpecialCharacter)){
                 hasSpecialChar = true;
                 break;
             }
@@ -38,15 +38,14 @@ public class Validator {
         }
 
         //Check that the password contains a mix of uppercase and lowercase letters
-        if(passwordStr.equals(passwordStr.toLowerCase())||passwordStr.equals(passwordStr.toUpperCase())){
+        if(passwordString.equals(passwordString.toLowerCase())||passwordString.equals(passwordString.toUpperCase())){
             rulesPassed--;
         }
 
         //Check that the password contains at least one number
-        boolean hasNumber = false;
         for(int i=0; i<numbers.length; i++){
             String currentNumber = numbers[i]+"";
-            if(passwordStr.contains(currentNumber)){
+            if(passwordString.contains(currentNumber)){
                 hasNumber = true;
                 break;
             }
